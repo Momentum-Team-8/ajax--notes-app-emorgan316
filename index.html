@@ -7,12 +7,31 @@
   <title>Notes</title>
 </head>
 <body>
-
+  <!-- {
+    "id": 1,
+    "title": "Confusion is my life",
+    "body": "This is the body of my note"
+  } -->
   <div id= "notebook"></div> 
   <script src="script.js"></script>
   <script>
     listNotes();
-    
+    setTimeout(() => {
+      deleteNote(1);
+    }, 50);
+    setTimeout(() => {
+      listNotes();
+    }, 100);
+    setTimeout(() => {
+      addNote({
+        
+        "title": "Confusion is my life",
+        "body": "This is the body of my note"
+      });
+    }, 150);
+    setTimeout(() => {
+      listNotes();
+    }, 200);
 
   </script>
 
