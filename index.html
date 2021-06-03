@@ -8,9 +8,14 @@
 </head>
 <body>
   <!-- {"id": 1,"title": "Confusion is my life","body": "This is the body of my note"} -->
-  <div id= "notebook">
-    <button onclick="addNote({'title': 'Confusion is my life','body': 'This is the body of my note'})">Add Button</button>
+  <div id="notebook">
+    <input id="addinputtitle"/>
+    <br/>
+    <input id="addinputbody"/>
+    <br/>
+    <button onclick="addNote()">Add Button</button>
   </div> 
+  <div id="notes"></div>
   <script src="script.js"></script>
   
 
