@@ -2,6 +2,8 @@ const url = 'http://localhost:3000/notes'
 const form = 'http://localhost:3000/notes/'
 const Notebook = document.querySelector('#notebook')
 
+// 1. fetches notes from node.js server
+// 2. for every note returned we're calling create element with that note (calling the function)
 function listNotes() {
     fetch (url)
     .then ((response) => response.json())
@@ -10,11 +12,14 @@ function listNotes() {
     })
 }
 
+// this is a function that creates a new div in the DOM for the note passed
 function createNoteElement(note){
-    // creating new div for the note
+// creating new div for the note
     let noteDiv =document.createElement('div');
+// created the attribute id and set it to the notes id
+// console.log(note.id);
     noteDiv.setAttribute('id',note.id);
-    // console.log(note.id);
+// adding html to the note div element - using $ sign string templates
     noteDiv.innerHTML = `${note.title} <br />${note.body}<br /><button onclick='deleteNote(${note.id})'>delete</button><br />`;
     document.getElementById('notes').appendChild(noteDiv);
 }
@@ -39,5 +44,5 @@ function addNote() {
         createNoteElement(json)    
     });
 }
-// this is executing the function to list the notes
+// this is calling/executing the function to list notes
 listNotes();
