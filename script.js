@@ -44,5 +44,6 @@ function addNote() {
         createNoteElement(json)    
     });
 }
+
 // this is calling/executing the function to list notes
 listNotes();
